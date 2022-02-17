@@ -11,20 +11,16 @@ class csvDialect(csv.Dialect):
 
 class DB:
     def __init__(self):
-        self.filestream = None
-        self.total_records = 0
         self.recordSize = 0
-
         self.numSortedRecords = 0
         self.numOverflowRecords = 0
+        self.delimiter = csvDialect.delimiter
+        self.databaseName = ""
 
         # files
         self.data = None
         self.overflow = None
         # self.config = None
-
-        self.delimiter = csvDialect.delimiter
-        self.databaseName = ""
 
 
     # create the data, overflow, and config files
@@ -105,19 +101,15 @@ class DB:
 
         # clear vars
 
-        self.filestream = None
-        self.total_records = 0
         self.recordSize = 0
-
         self.numSortedRecords = 0
         self.numOverflowRecords = 0
+        self.delimiter = csvDialect.delimiter
+        self.databaseName = ""
 
         self.data = None
         self.overflow = None
         # self.config = None
-
-        self.delimiter = csvDialect.delimiter
-        self.databaseName = ""
 
 
     # check if the DB is open
